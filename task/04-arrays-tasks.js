@@ -44,7 +44,7 @@ function generateOdds(len) {
     for (var i = 1, j = 0; j < len; i + 2, j++) {
         array.push(i);
     }
-
+    
     return array;
     throw new Error('Not implemented');
 }
