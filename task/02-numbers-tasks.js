@@ -22,6 +22,7 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
+    return width * height;
     throw new Error('Not implemented');
 }
 
@@ -38,6 +39,7 @@ function getRectangleArea(width, height) {
  *   0    => 0
  */
 function getCicleCircumference(radius) {
+    return radius*2*Math.PI;
     throw new Error('Not implemented');
 }
 
@@ -54,6 +56,8 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
+
+    return ((value1 + value2) / 2) > Number.MAX_VALUE ? Number.MAX_VALUE :((value1 + value2) / 2);
     throw new Error('Not implemented');
 }
 
@@ -73,6 +77,7 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
+    return Math.sqrt( Math.pow((x2 - x1), 2)  + Math.pow((y2 - y1), 2) );
     throw new Error('Not implemented');
 }
 
@@ -89,6 +94,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
+    return b/-a;
     throw new Error('Not implemented');
 }
 
@@ -104,9 +110,9 @@ function getLinearEquationRoot(a, b) {
  * @return {number}
  *
  * @example:
- *   (1,0) (0,1)     => π/2
- *   (0,1) (0,-1)    => π
- *   (0,-1) (1,0)    => π/2
+ *   (1,0) (0,1)     => ?/2
+ *   (0,1) (0,-1)    => ?
+ *   (0,-1) (1,0)    => ?/2
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
@@ -169,7 +175,7 @@ function getParallelipidedDiagonal(a,b,c) {
  * @param {number} num
  * @param {number} pow
  * @return {number}
- *  
+ *
  * @example:
  *   1234, 0  => 1234
  *   1234, 1  => 1230
@@ -190,7 +196,7 @@ function roundToPowerOfTen(num, pow) {
  *
  * @param {number} n
  * @return {bool}
- * 
+ *
  * @example:
  *   4 => false
  *   5 => true
