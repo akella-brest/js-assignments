@@ -88,7 +88,7 @@ function extractNameFromTemplate(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-    return value.slice(0,1);
+    return value.slice(0, 1);
     throw new Error('Not implemented');
 }
 
@@ -106,6 +106,7 @@ function getFirstChar(value) {
 function removeLeadingAndTrailingWhitespaces(value) {
     value = value.replace(/\s+/g, '');
     value = value.replace(",", ", ");
+
     return value;
     throw new Error('Not implemented');
 }
@@ -123,9 +124,11 @@ function removeLeadingAndTrailingWhitespaces(value) {
  */
 function repeatString(value, count) {
     var str = "";
+
     for (var i = 0; i < count; i++) {
         str += value;
     }
+
     return str;
     throw new Error('Not implemented');
 }
@@ -161,6 +164,7 @@ function removeFirstOccurrences(str, value) {
 function unbracketTag(str) {
     str = str.replace("<", "");
     str = str.replace(">", "");
+
     return str;
     throw new Error('Not implemented');
 }
@@ -220,7 +224,6 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-
     throw new Error('Not implemented');
 }
 
@@ -241,6 +244,21 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
+    var str_ = "";
+
+    for (var i = 0; i < str.length; i++) {
+        if ((str.charAt(i).charCodeAt()) > 109) {
+            str_ += String.fromCharCode(str.charAt(i).charCodeAt() + 13 - 26);
+        } else if (77 < (str.charAt(i).charCodeAt()) && (str.charAt(i).charCodeAt()) <= 90) {
+            str_ += String.fromCharCode(str.charAt(i).charCodeAt() + 13 - 26);
+        } else if ((str.charAt(i).charCodeAt()) < 64) {
+            str_ += String.fromCharCode(str.charAt(i).charCodeAt());
+        } else {
+            str_ += String.fromCharCode(str.charAt(i).charCodeAt() + 13);
+        }
+    }
+
+    return str_;
     throw new Error('Not implemented');
 }
 
