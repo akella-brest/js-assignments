@@ -56,7 +56,6 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-
     return ((value1 + value2) / 2) > Number.MAX_VALUE ? Number.MAX_VALUE :((value1 + value2) / 2);
     throw new Error('Not implemented');
 }
