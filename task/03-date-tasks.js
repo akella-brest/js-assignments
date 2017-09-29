@@ -22,7 +22,7 @@
  *    'Sun, 17 May 1998 03:00:00 GMT+01' => Date()
  */
 function parseDataFromRfc2822(value) {
-    return new Date (value);
+    return Date.parse(value);
     throw new Error('Not implemented');
 }
 
@@ -99,7 +99,7 @@ function timeSpanToString(startDate, endDate) {
  * Returns the angle (in radians) between the hands of an analog clock for the specified Greenwich time.
  * If you have problem with solution please read: https://en.wikipedia.org/wiki/Clock_angle_problem
  * 
- * @param {date:Date} date
+ * @param {date} date
  * @return {number}
  *
  * @example:
@@ -113,7 +113,7 @@ function angleBetweenClockHands(date) {
     var mAngle = 6 * date.getUTCMinutes();
     var angle = Math.abs(hAngle - mAngle);
 
-    (angle > 360) ? angle = angle - 360 : angle;
+    (angle > 360) ? angle -= 360 : angle;
 
     angle = Math.min(angle, 360 - angle);
 
