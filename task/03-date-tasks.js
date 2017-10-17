@@ -114,7 +114,6 @@ function angleBetweenClockHands(date) {
     var angle = Math.abs(hAngle - mAngle);
 
     (angle > 360) ? angle -= 360 : angle;
-
     angle = Math.min(angle, 360 - angle);
 
     return ((Math.PI * angle) / 180) < 0 ? -((Math.PI * angle) / 180) : ((Math.PI * angle) / 180);
