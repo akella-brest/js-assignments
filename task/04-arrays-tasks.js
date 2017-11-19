@@ -637,7 +637,7 @@ function selectMany(arr, childrenSelector) {
  *   [[[ 1, 2, 3]]], [ 0, 0, 1 ]      => 2        (arr[0][0][1])
  */
 function getElementByIndexes(arr, indexes) {
-    // return indexes.reduce((a,b)=>a[b],arr);
+    return indexes.reduce((a, b) => a[b], arr);
     throw new Error('Not implemented');
 }
 
@@ -661,26 +661,25 @@ function getElementByIndexes(arr, indexes) {
  *
  */
 function swapHeadAndTail(arr) {
-    // if(arr.length === 1) {
-    //     return arr;
-    // }
-    //
-    // var middleIndex = Math.floor(arr.length / 2);
-    //
-    // if(arr.length % 2 === 0){
-    //     var start = arr.slice(0, middleIndex);
-    //     var finish = arr.slice(middleIndex, arr.length);
-    //
-    //     return finish.concat(start);
-    // }
-    // else{
-    //     var start = arr.slice(0, middleIndex);
-    //     var middle = [];
-    //     middle.push(arr[middleIndex]);
-    //     var finish = arr.slice(-middleIndex);
-    //
-    //     return finish.concat(middle).concat(start);
-    // }
+    if (arr.length == 1) {
+        return arr;
+    }
+
+    var middleIndex = Math.floor(arr.length / 2);
+
+    if (arr.length % 2 == 0) {
+        var start = arr.slice(0, middleIndex);
+        var finish = arr.slice(middleIndex, arr.length);
+
+        return finish.concat(start);
+    } else {
+        var start = arr.slice(0, middleIndex);
+        var middle = [];
+        middle.push(arr[middleIndex]);
+        var finish = arr.slice(-middleIndex);
+
+        return finish.concat(middle).concat(start);
+    }
     throw new Error('Not implemented');
 }
 
